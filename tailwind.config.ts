@@ -8,10 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      keyframes: {
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-15%)' },
+        },
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '25%, 75%': { transform: 'translateX(-5px)' },
+          '50%': { transform: 'translateX(5px)' },
+        },
+      },
+      animation: {
+        rotate: 'rotate 0.5s ease-in-out',
+        bounce: 'bounce 0.5s ease-in-out',
+        shake: 'shake 0.5s ease-in-out',
       },
     },
   },
