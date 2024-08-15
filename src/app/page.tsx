@@ -34,6 +34,7 @@ export default function Home() {
 
   const regenerateCPF = () => {
     setIsRotating(true);
+    setCpf(generateCPF());
     toast.success("CPF regenerado");
     setTimeout(() => setIsRotating(false), 500);
   };
